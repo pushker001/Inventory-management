@@ -1,0 +1,86 @@
+{
+  "theme_type": "light",
+  "typography": {
+    "fonts_url": "<link href=\"https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Outfit:wght@500;600;700&display=swap\" rel=\"stylesheet\">",
+    "heading": "Outfit, sans-serif",
+    "body": "DM Sans, sans-serif",
+    "description": "Outfit provides a clean, modern, and structured feel for financial numbers and headings, while DM Sans ensures high legibility and warmth for dense data in tables and lists."
+  },
+  "colors": {
+    "light": {
+      "background": "36 33% 98%",
+      "foreground": "20 15% 15%",
+      "card": "0 0% 100%",
+      "card-foreground": "20 15% 15%",
+      "popover": "0 0% 100%",
+      "popover-foreground": "20 15% 15%",
+      "primary": "15 65% 50%",
+      "primary-foreground": "0 0% 100%",
+      "secondary": "42 100% 48%",
+      "secondary-foreground": "20 15% 15%",
+      "muted": "30 20% 94%",
+      "muted-foreground": "20 10% 40%",
+      "accent": "30 20% 94%",
+      "accent-foreground": "20 15% 15%",
+      "destructive": "0 70% 50%",
+      "destructive-foreground": "0 0% 100%",
+      "border": "30 20% 90%",
+      "input": "30 20% 90%",
+      "ring": "15 65% 50%",
+      "success": "146 45% 40%"
+    },
+    "description": "Archetype 1 (Organic & Earthy). The base is a warm off-white (like raw cotton), primary is Terracotta/Rust (evoking spices), secondary is Turmeric. Success is a grounded Sage Green. This balances the strict utility of an accounting app with the warmth of traditional Indian retail."
+  },
+  "layouts": {
+    "mobile_first": true,
+    "container": "w-full max-w-md mx-auto min-h-screen bg-background relative pb-24 shadow-[0_0_40px_rgba(0,0,0,0.05)]",
+    "navigation": "Fixed bottom tab bar. Do not use a desktop-style top header or sidebar. The app must feel like a native mobile app.",
+    "cards": "Use 'Bento' style dense grids on the dashboard. Use `rounded-2xl` for large cards, `rounded-xl` for smaller inputs.",
+    "spacing": "Generous spacing `p-4` to `p-6` inside cards. Large `gap-4` between sections."
+  },
+  "components": {
+    "buttons": "Pill-shaped or rounded-xl. Primary buttons must use the Terracotta color. Minimum height `48px` (h-12) for fat finger taps.",
+    "inputs": "Shadcn standard inputs but heavily customized: `h-12`, `rounded-xl`, `bg-white`, warm subtle borders. Use explicit `focus:ring-primary`.",
+    "pin_screen": "A full-screen numeric keypad grid `grid-cols-3` with large circular or softly rounded square buttons for PIN entry.",
+    "charts": "Recharts. Use simple AreaChart or BarChart. Remove heavy gridlines. Use `stopColor` gradients for area fills."
+  },
+  "media": {
+    "icons_library": "lucide-react",
+    "sample_images": {
+      "masala": {
+        "url": "https://images.unsplash.com/photo-1716816211590-c15a328a5ff0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxJbmRpYW4lMjBzcGljZXMlMjBtYXNhbGF8ZW58MHx8fHwxNzgzMjc0NzE3fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Table topped with raw Indian spices. Use as a thumbnail for the Masala SKU category."
+      },
+      "biscuits": {
+        "url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35",
+        "description": "Brown cookies/biscuits. Use as a thumbnail for the Biscuits SKU category."
+      },
+      "namkeen": {
+        "url": "https://images.pexels.com/photos/6576317/pexels-photo-6576317.jpeg",
+        "description": "Assortment of Indian snacks. Use as a thumbnail for the Namkeen SKU category."
+      }
+    }
+  },
+  "motion": {
+    "interactions": "Use `framer-motion` for page transitions (slide up/fade) and `whileTap={{ scale: 0.97 }}` on all primary buttons and interactive cards."
+  },
+  "instructions_to_main_agent": [
+    "1. Setup `index.css` with the provided HSL color variables.",
+    "2. Update `tailwind.config.js` to include fonts: `heading: ['Outfit', 'sans-serif']` and `body: ['DM Sans', 'sans-serif']`.",
+    "3. Scaffold a single-page app (or use React Router) wrapped in a mobile frame (`max-w-md mx-auto relative`).",
+    "4. Implement the PIN Lock screen first. It should block access until a simple hardcoded PIN (e.g., '1234') is entered.",
+    "5. Build the Dashboard: Big 'Net Profit' card, a smaller Recharts area chart for MoM trend, and quick action FABs or grid buttons (Purchase, Sale).",
+    "6. Build the Purchase/Sale forms: Must have a toggle for Wholesaler vs Retailer (for sales). Ensure Box-to-Unit math is automatically calculated.",
+    "7. Build the Stock & Profit Report tables. Make them swipeable or dense enough for mobile.",
+    "8. Use `data-testid` on all inputs, buttons, and crucial data points (like profit display)."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic outputs. Avoid 'AI slop' aesthetics. Do NOT use default blue/indigo colors. Stick to the warm Indian retail palette (Terracotta, Turmeric, warm off-white).",
+    "Do NOT apply universal transition. Eg: `transition: all`.",
+    "Do NOT center align the app container text, keep it left-aligned for natural reading.",
+    "Every interaction needs micro-animations - hover states, transitions, press states.",
+    "NEVER use placeholder URLs (via.placeholder.com). Use the provided Unsplash/Pexels URLs for category thumbnails.",
+    "For toasts, strictly use `sonner`.",
+    "Ensure all monetary values use the Indian Rupee symbol (₹)."
+  ]
+}
